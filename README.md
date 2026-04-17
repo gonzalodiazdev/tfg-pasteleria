@@ -205,7 +205,7 @@ Railway gestiona tanto el servidor Node.js como la base de datos MySQL en la mis
    | `DB_NAME` | nombre de la base de datos |
    | `PORT` | Railway lo inyecta automáticamente, no es necesario definirlo |
 
-5. En **Settings → Networking**, generar un dominio público. La URL resultante (p. ej. `https://tfg-backend.up.railway.app`) es la dirección de la API.
+5. En **Settings → Networking**, generar un dominio público. La URL de este proyecto es: `https://tfg-pasteleria-production.up.railway.app`
 
 ### Frontend en Netlify
 
@@ -215,18 +215,18 @@ Railway gestiona tanto el servidor Node.js como la base de datos MySQL en la mis
    - **Build command**: vacío (no hay proceso de compilación)
    - **Publish directory**: `.` (raíz del proyecto)
 3. Desplegar el sitio.
-4. Una vez obtenido el dominio de Netlify (p. ej. `https://productos-alvarez.netlify.app`), ir a **Site configuration → Snippet injection** y añadir el siguiente snippet en el `<head>` de todas las páginas:
+4. El sitio queda disponible en `https://tfg-pasteleriav2.netlify.app`. Ir a **Site configuration → Snippet injection** y añadir el siguiente snippet en el `<head>` de todas las páginas:
 
    ```html
-   <script>window.__BACKEND_URL__ = "https://tfg-backend.up.railway.app";</script>
+   <script>window.__BACKEND_URL__ = "https://tfg-pasteleria-production.up.railway.app";</script>
    ```
 
    Esto permite que `src/js/config.js` apunte al backend correcto en producción sin recompilar nada.
 
-5. Volver al backend en Railway y actualizar la configuración CORS en `server.js` para restringir el origen permitido al dominio de Netlify:
+5. El backend en Railway ya tiene CORS restringido al dominio de Netlify:
 
    ```js
-   app.use(cors({ origin: "https://productos-alvarez.netlify.app" }));
+   app.use(cors({ origin: "https://tfg-pasteleriav2.netlify.app" }));
    ```
 
 ---
