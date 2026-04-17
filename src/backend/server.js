@@ -11,9 +11,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// TODO: tras desplegar en Netlify, restringir origin al dominio real:
-// app.use(cors({ origin: "https://tu-sitio.netlify.app" }));
-app.use(cors());
+app.use(cors({ origin: "https://tfg-pasteleriav2.netlify.app" }));
 app.use(express.json());
 
 app.use("/api/products", productRoutes);
