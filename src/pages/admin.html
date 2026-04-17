@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración | Productos Álvarez</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    :root{
+      --admin-primary:#1e3a5f;
+      --admin-primary-2:#284b75;
+      --admin-soft:#eef4fa;
+      --admin-border:#d7e2ee;
+      --admin-danger:#b42318;
+      --admin-danger-dark:#912018;
+      --admin-success:#067647;
+      --admin-text:#1f2937;
+      --admin-muted:#667085;
+      --admin-white:#ffffff;
+    }
+
+    body.admin-body{
+      background:#f7f9fc;
+      color:var(--admin-text);
+    }
+
+    .admin-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:40px 20px 60px;
+    }
+
+    .admin-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      margin-bottom:28px;
+      padding:24px 28px;
+      background:linear-gradient(135deg,var(--admin-primary),var(--admin-primary-2));
+      color:var(--admin-white);
+      border-radius:18px;
+      box-shadow:0 12px 30px rgba(30,58,95,.18);
+    }
+
+    .admin-header h1{
+      margin:0 0 8px;
+      font-size:2rem;
+      line-height:1.1;
+    }
+
+    .admin-header p{
+      margin:0;
+      opacity:.92;
+    }
+
+    .admin-top-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .admin-btn{
+      border:none;
+      border-radius:10px;
+      padding:12px 18px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+
+    .admin-btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .admin-btn-primary{
+      background:var(--admin-primary);
+      color:#fff;
+    }
+
+    .admin-btn-primary:hover{
+      background:var(--admin-primary-2);
+    }
+
+    .admin-btn-soft{
+      background:#fff;
+      color:var(--admin-primary);
+    }
+
+    .admin-btn-soft:hover{
+      background:#f3f6fa;
+    }
+
+    .admin-stack{
+      display:flex;
+      flex-direction:column;
+      gap:24px;
+    }
+
+    .admin-card{
+      background:#fff;
+      border:1px solid var(--admin-border);
+      border-radius:18px;
+      box-shadow:0 6px 18px rgba(16,24,40,.06);
+      overflow:hidden;
+    }
+
+    .admin-card-head{
+      padding:18px 22px;
+      border-bottom:1px solid var(--admin-border);
+      background:var(--admin-soft);
+    }
+
+    .admin-card-head h2{
+      margin:0 0 6px;
+      font-size:1.15rem;
+      color:var(--admin-primary);
+    }
+
+    .admin-card-head p{
+      margin:0;
+      color:var(--admin-muted);
+      font-size:.95rem;
+    }
+
+    .admin-card-body{
+      padding:22px;
+    }
+
+    .admin-table-wrap{
+      overflow:auto;
+    }
+
+    .admin-toolbar{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:16px;
+    }
+
+    .admin-search{
+      width:100%;
+      max-width:320px;
+    }
+
+    .admin-search input{
+      width:100%;
+      border:1px solid #c9d6e3;
+      border-radius:10px;
+      padding:12px 14px;
+      font:inherit;
+    }
+
+    .admin-table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:900px;
+    }
+
+    .admin-table th,
+    .admin-table td{
+      padding:14px 12px;
+      text-align:left;
+      border-bottom:1px solid #e7edf4;
+      vertical-align:top;
+    }
+
+    .admin-table th{
+      background:#f8fbff;
+      color:var(--admin-primary);
+      font-size:.92rem;
+    }
+
+    .admin-table td{
+      font-size:.95rem;
+    }
+
+    .admin-product-name{
+      font-weight:700;
+      margin-bottom:4px;
+    }
+
+    .admin-product-meta{
+      color:var(--admin-muted);
+      font-size:.88rem;
+    }
+
+    .admin-badge{
+      display:inline-flex;
+      align-items:center;
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:.78rem;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .admin-badge-active{
+      background:#e7f6ec;
+      color:#067647;
+    }
+
+    .admin-badge-inactive{
+      background:#f2f4f7;
+      color:#667085;
+    }
+
+    .admin-table-actions{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .admin-empty{
+      padding:24px;
+      text-align:center;
+      color:var(--admin-muted);
+      background:#f9fbfd;
+      border:1px dashed var(--admin-border);
+      border-radius:14px;
+    }
+
+    .admin-status{
+      margin-bottom:14px;
+      padding:12px 14px;
+      border-radius:10px;
+      font-weight:600;
+      display:none;
+    }
+
+    .admin-status.show{
+      display:block;
+    }
+
+    .admin-status.success{
+      background:#e7f6ec;
+      color:#067647;
+      border:1px solid #b7e4c7;
+    }
+
+    .admin-status.error{
+      background:#fdecea;
+      color:#b42318;
+      border:1px solid #f5c2c0;
+    }
+  </style>
+</head>
+<body class="admin-body">
+  <main class="admin-wrap">
+    <section class="admin-header">
+      <div>
+        <h1>Panel de Administración</h1>
+        <p>Gestiona catálogo y pedidos desde una única vista.</p>
+      </div>
+
+      <div class="admin-top-actions">
+        <button id="logout-admin" class="admin-btn admin-btn-soft" type="button">Cerrar sesión</button>
+        <a href="../../index.html" class="admin-btn admin-btn-soft" style="text-decoration:none;">Volver al inicio</a>
+      </div>
+    </section>
+
+    <div id="admin-status" class="admin-status"></div>
+
+    <section class="admin-stack">
+      <article class="admin-card">
+        <div class="admin-card-head">
+          <h2>Gestión de catálogo</h2>
+          <p>Mueve productos entre tienda y próximamente, y ajusta su stock.</p>
+        </div>
+
+        <div class="admin-card-body">
+          <div class="admin-toolbar">
+            <div class="admin-search">
+              <input type="text" id="admin-search" placeholder="Buscar por nombre o slug">
+            </div>
+          </div>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Producto</th>
+                  <th>Precio</th>
+                  <th>Stock</th>
+                  <th>Estado</th>
+                  <th>Situación actual</th>
+                  <th>Mover a</th>
+                  <th>Guardar</th>
+                </tr>
+              </thead>
+              <tbody id="products-table-body">
+                <tr>
+                  <td colspan="8">
+                    <div class="admin-empty">Cargando catálogo...</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="admin-card">
+        <div class="admin-card-head">
+          <h2>Pedidos recibidos</h2>
+          <p>Consulta pedidos y actualiza su estado.</p>
+        </div>
+
+        <div class="admin-card-body">
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Cliente</th>
+                  <th>Total</th>
+                  <th>Fecha</th>
+                  <th>Estado</th>
+                  <th>Acción</th>
+                </tr>
+              </thead>
+              <tbody id="orders-table-body">
+                <tr>
+                  <td colspan="6">
+                    <div class="admin-empty">Cargando pedidos...</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="../js/admin.js"></script>
+</body>
+</html>

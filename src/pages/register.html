@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear cuenta | Productos Álvarez</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    :root{
+      --site-primary:#2b9c9c;
+      --site-primary-dark:#247f7f;
+      --site-soft:#eef9f8;
+      --site-border:#cfe7e5;
+      --site-text:#2f3b3b;
+      --site-muted:#6b7c7c;
+      --site-white:#ffffff;
+    }
+
+    body{
+      background:#f5f5f5;
+      color:var(--site-text);
+    }
+
+    .auth-wrap{
+      max-width:520px;
+      margin:0 auto;
+      padding:50px 20px 60px;
+    }
+
+    .auth-card{
+      background:#fff;
+      border:1px solid #ececec;
+      border-radius:18px;
+      box-shadow:0 8px 24px rgba(0,0,0,.04);
+      overflow:hidden;
+    }
+
+    .auth-head{
+      padding:24px 28px;
+      background:var(--site-soft);
+      border-bottom:1px solid #ececec;
+    }
+
+    .auth-head h1{
+      margin:0 0 8px;
+      color:#2f3b3b;
+      font-size:1.9rem;
+      line-height:1.1;
+    }
+
+    .auth-head p{
+      margin:0;
+      color:var(--site-muted);
+    }
+
+    .auth-body{
+      padding:26px 28px 30px;
+    }
+
+    .auth-btn{
+      border:none;
+      border-radius:12px;
+      padding:12px 18px;
+      font-weight:700;
+      cursor:pointer;
+      background:var(--site-primary);
+      color:#fff;
+      transition:.2s ease;
+    }
+
+    .auth-btn:hover{
+      background:var(--site-primary-dark);
+      transform:translateY(-1px);
+    }
+
+    .auth-note{
+      margin-top:16px;
+      color:var(--site-muted);
+    }
+
+    .auth-note a{
+      color:var(--site-primary-dark);
+      font-weight:700;
+      text-decoration:none;
+    }
+  </style>
+</head>
+<body>
+  <main class="auth-wrap">
+    <section class="auth-card">
+      <div class="auth-head">
+        <h1>Crear cuenta</h1>
+        <p>Regístrate para consultar tus pedidos con tu correo.</p>
+      </div>
+
+      <div class="auth-body">
+        <form id="register-form" class="checkout-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="register-name">Nombre <span class="req">*</span></label>
+              <input id="register-name" type="text" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="register-email">Correo electrónico <span class="req">*</span></label>
+              <input id="register-email" type="email" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="register-password">Contraseña <span class="req">*</span></label>
+              <input id="register-password" type="password" required>
+            </div>
+          </div>
+
+          <button type="submit" class="auth-btn">Registrarse</button>
+
+          <p class="auth-note">
+            ¿Ya tienes cuenta? <a href="./login.html">Inicia sesión</a>
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="../js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos Álvarez</title>
+  <link rel="stylesheet" href="./src/css/styles.css" />
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="./src/assets/img/logo-productos-alvarez.webp" alt="Productos Álvarez" />
+        </a>
+      </div>
+  
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="./src/pages/tienda.html">Tienda</a></li>
+        <li><a href="./src/pages/galeria.html">Galería</a></li>
+        <li><a href="index.html#quienes-somos">Quiénes somos</a></li>
+        <li><a href="./src/pages/contacto.html">Contacto</a></li>
+  
+        <li id="user-menu-slot" class="user-menu-slot"></li>
+  
+        <li class="cart-link">
+          <a href="./src/pages/carrito.html">
+            🛒 <span id="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =========================
+       HERO
+  ========================== -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Magdalenas tradicionales</h1>
+        <p>Con ingredientes 100% naturales</p>
+        <a href="tel:623044697" class="hero-phone">623 044 697</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       GRANJA (ID DESTINO QUIÉNES SOMOS)
+  ========================== -->
+  <section class="home-granja" id="quienes-somos">
+    <div class="container">
+
+      <h2 class="granja-title">De nuestra granja a tu mesa</h2>
+
+      <figure class="granja-banner">
+        <img
+          src="./src/assets/img/home/granja-bg.webp"
+          alt="Granja y gallinas camperas"
+          loading="lazy"
+        />
+      </figure>
+
+      <p class="granja-subtitle">Huevos camperos seleccionados uno a uno</p>
+
+      <p class="granja-text">
+        En Productos Álvarez trabajamos con ingredientes de origen local y huevos camperos
+        procedentes de nuestra propia granja. Cuidamos cada detalle del proceso para garantizar
+        frescura, calidad y sabor auténtico en cada magdalena.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       PROCESO ARTESANAL (IMG IZQ / TEXTO DER)
+  ========================== -->
+  <section class="home-split section-divider-top">
+    <div class="container split-grid">
+
+      <div class="split-image">
+        <img src="./src/assets/img/home/proceso-artesanal.webp" alt="Proceso artesanal" loading="lazy" />
+      </div>
+
+      <div class="split-text">
+        <h3>Proceso artesanal</h3>
+        <h2>Magdalenas con sabor auténtico</h2>
+        <p>
+          Cada lote se elabora diariamente en nuestro obrador, controlando tiempos,
+          temperatura y calidad. No trabajamos producción industrial masiva:
+          priorizamos frescura y textura perfecta.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       RECETAS CON HISTORIA (IMG DER / TEXTO IZQ)
+  ========================== -->
+  <section class="home-split reverse section-divider-bottom">
+    <div class="container split-grid">
+
+      <div class="split-image">
+        <img src="./src/assets/img/home/producto-detalle.webp" alt="Detalle magdalena" loading="lazy" />
+      </div>
+
+      <div class="split-text">
+        <h3>Recetas con historia</h3>
+        <h2>La esencia de nuestras magdalenas</h2>
+        <p>
+          Nuestras recetas respetan el equilibrio entre tradición y calidad moderna.
+          Cada magdalena conserva la textura esponjosa y el sabor que recuerdan a las de casa.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       OPINIONES (3 AVATARES)
+  ========================== -->
+  <section class="home-testimonials">
+    <div class="container">
+
+      <h2 class="section-title-center">Lo que dicen nuestros clientes</h2>
+
+      <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+          <img src="./src/assets/img/home/avatar-01.webp" alt="Marta G." loading="lazy" />
+          <h4>Marta G.</h4>
+          <p>Las mejores magdalenas que he probado en años. Sabor auténtico y frescura increíble.</p>
+        </div>
+
+        <div class="testimonial-card">
+          <img src="./src/assets/img/home/avatar-02.webp" alt="José A." loading="lazy" />
+          <h4>José A.</h4>
+          <p>Se nota la calidad del producto. Repetiremos sin duda.</p>
+        </div>
+
+        <div class="testimonial-card">
+          <img src="./src/assets/img/home/avatar-03.webp" alt="Carmen L." loading="lazy" />
+          <h4>Carmen L.</h4>
+          <p>Envío rápido y producto espectacular. Artesanía real.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       PRODUCTOS DESTACADOS (AL FINAL)
+  ========================== -->
+  <section class="featured">
+    <div class="container">
+
+      <header class="section-header">
+        <h2>Productos destacados</h2>
+        <p>Una selección de nuestras magdalenas más populares.</p>
+      </header>
+
+      <div class="product-grid">
+
+        <article class="product-card">
+          <a class="product-thumb" href="./src/pages/producto.html?id=1">
+            <img src="./src/assets/img/products/tradicionales.webp" alt="Magdalenas tradicionales" />
+          </a>
+          <div class="product-info">
+            <h3 class="product-title">Magdalenas tradicionales (6 ud)</h3>
+            <p class="product-desc">Receta clásica, esponjosas y artesanales.</p>
+            <div class="product-meta">
+              <span class="product-price">6,30 €</span>
+              <button class="btn-add" type="button" data-id="1">Añadir</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a class="product-thumb" href="./src/pages/producto.html?id=2">
+            <img src="./src/assets/img/products/blanco.webp" alt="Magdalenas chocolate blanco" />
+          </a>
+          <div class="product-info">
+            <h3 class="product-title">Chocolate blanco (6 ud)</h3>
+            <p class="product-desc">Cobertura suave con topping crujiente.</p>
+            <div class="product-meta">
+              <span class="product-price">6,90 €</span>
+              <button class="btn-add" type="button" data-id="2">Añadir</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a class="product-thumb" href="./src/pages/producto.html?id=3">
+            <img src="./src/assets/img/products/pepitas.webp" alt="Magdalenas con pepitas" />
+          </a>
+          <div class="product-info">
+            <h3 class="product-title">Pepitas de chocolate (6 ud)</h3>
+            <p class="product-desc">Sabor intenso con pepitas por encima.</p>
+            <div class="product-meta">
+              <span class="product-price">6,90 €</span>
+              <button class="btn-add" type="button" data-id="3">Añadir</button>
+            </div>
+          </div>
+        </article>
+
+    <!-- Producto 4 -->
+<article class="product-card">
+  <a class="product-thumb" href="./src/pages/producto.html?id=4">
+    <img src="./src/assets/img/products/mix.webp" alt="Caja mix 24 unidades" />
+  </a>
+
+  <div class="product-info">
+    <h3 class="product-title">Caja mix (24 ud)</h3>
+    <p class="product-desc">Surtido variado para regalar o compartir.</p>
+
+    <div class="product-meta">
+      <span class="product-price">15,40 €</span>
+      <button class="btn-add" type="button" data-id="4">Añadir</button>
+    </div>
+  </div>
+</article>
+
+
+      </div>
+
+      <div class="section-actions">
+        <a class="btn-secondary" href="./src/pages/tienda.html">Ver tienda</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="site-footer" id="footer">
+
+    <!-- MAPA -->
+    <section class="footer-map-wrap" aria-label="Mapa">
+      <div class="container">
+        <h3 class="footer-kicker">Te esperamos</h3>
+
+        <div class="footer-map">
+          <iframe
+            src="https://www.google.com/maps?q=Cañada%20Rosal%20Sevilla&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de ubicación Productos Álvarez"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO / HORARIO -->
+    <section class="footer-main">
+      <div class="container footer-grid">
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p><strong>Teléfono:</strong> <a href="tel:623044697">623 044 697</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@productosalvarez.es">info@productosalvarez.es</a></p>
+          <p><strong>Ubicación:</strong> Cañada Rosal, Sevilla</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Horario</h4>
+          <p>Lunes a jueves: 09:30–14:00 / 16:00–19:30</p>
+          <p>Viernes: 09:30–14:00</p>
+        </div>
+
+        <div class="footer-col">
+      
+          <ul class="footer-links">
+            <li><a href="./src/pages/tienda.html">Tienda</a></li>
+            <li><a href="./src/pages/galeria.html">Galería</a></li>
+            <li><a href="./src/pages/contacto.html">Contacto</a></li>
+            <li><a href="./src/pages/carrito.html">Carrito</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AYUDAS / LOGOS -->
+    <section class="footer-aids">
+      <div class="container">
+
+        <div class="footer-aids-banners">
+          <img src="./src/assets/img/footer/footer-logos-ayudas-01.webp" alt="Incentivos y ayudas - Junta de Andalucía y Unión Europea" loading="lazy">
+          <img src="./src/assets/img/footer/footer-logos-ayudas-02.webp" alt="Financiación - Unión Europea, Gobierno de España, red.es, Kit Digital" loading="lazy">
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2024 Productos Álvarez – Todos los derechos reservados</p>
+        </div>
+
+      </div>
+    </section>
+
+  </footer>
+
+  <script src="./src/js/app.js"></script>
+  <script src="./src/js/user-menu.js"></script>
+</body>
+</html>

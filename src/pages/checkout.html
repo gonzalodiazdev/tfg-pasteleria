@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout | Productos Álvarez</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">
+      <a href="../../index.html">
+        <img src="../assets/img/logo-productos-alvarez.webp" alt="Productos Álvarez">
+      </a>
+    </div>
+
+    <ul class="menu">
+      <li><a href="../../index.html">Inicio</a></li>
+      <li><a href="./tienda.html">Tienda</a></li>
+      <li id="user-menu-slot"></li>
+
+      <li class="cart-link">
+        <a href="./carrito.html">🛒 <span id="cart-count">0</span></a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container checkout-page">
+
+  <header class="checkout-header">
+    <h1>Finalizar compra</h1>
+
+    <div class="checkout-login-banner">
+      Esta compra se realiza actualmente como <strong>invitado</strong>. En una futura versión se incorporará el registro e inicio de sesión de clientes.
+    </div>
+  </header>
+
+  <section class="checkout-grid">
+
+    <form id="checkout-form" class="checkout-form" novalidate>
+
+      <h2>Detalles de facturación</h2>
+
+      <div class="form-row two">
+        <div class="form-field">
+          <label for="firstName">Nombre <span class="req">*</span></label>
+          <input id="firstName" name="firstName" type="text" required />
+        </div>
+
+        <div class="form-field">
+          <label for="lastName">Apellidos <span class="req">*</span></label>
+          <input id="lastName" name="lastName" type="text" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="country">País / Región <span class="req">*</span></label>
+          <select id="country" name="country" required>
+            <option value="España" selected>España</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="address1">Dirección <span class="req">*</span></label>
+          <input id="address1" name="address1" type="text" required />
+        </div>
+      </div>
+
+      <div class="form-row two">
+        <div class="form-field">
+          <label for="zip">Código postal / ZIP <span class="req">*</span></label>
+          <input id="zip" name="zip" type="text" required />
+        </div>
+
+        <div class="form-field">
+          <label for="city">Población <span class="req">*</span></label>
+          <input id="city" name="city" type="text" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="province">Provincia <span class="req">*</span></label>
+          <select id="province" name="province" required>
+            <option value="" selected disabled>Elige una opción...</option>
+            <option>Sevilla</option>
+            <option>Córdoba</option>
+            <option>Málaga</option>
+            <option>Granada</option>
+            <option>Huelva</option>
+            <option>Cádiz</option>
+            <option>Jaén</option>
+            <option>Almería</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="phone">Teléfono <span class="req">*</span></label>
+          <input id="phone" name="phone" type="tel" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="email">Dirección de correo electrónico <span class="req">*</span></label>
+          <input id="email" name="email" type="email" required />
+        </div>
+      </div>
+
+      <hr class="checkout-sep" />
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="notes">Notas del pedido (opcional)</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Escribe aquí cualquier indicación adicional para tu pedido."></textarea>
+        </div>
+      </div>
+
+    </form>
+
+    <aside class="order-summary">
+
+      <h2>Tu pedido</h2>
+
+      <div class="order-box">
+        <div class="order-head">
+          <span>Producto</span>
+          <span>Subtotal</span>
+        </div>
+
+        <div id="order-lines" class="order-lines"></div>
+
+        <div class="order-row">
+          <span>Subtotal</span>
+          <span id="order-subtotal">0,00 €</span>
+        </div>
+
+        <div class="order-row">
+          <span>Envío</span>
+          <span>Envío gratuito</span>
+        </div>
+
+        <div class="order-row order-total">
+          <span>Total</span>
+          <span>
+            <strong id="order-total">0,00 €</strong>
+            <small class="muted" id="order-iva-note">IVA incluido en el precio final</small>
+          </span>
+        </div>
+      </div>
+
+      <div class="payment-box">
+        <h3>Pagar con Tarjeta</h3>
+        <div class="payment-note">
+          Pago simulado (modo proyecto). No se realiza ningún cargo real.
+        </div>
+
+        <label class="checkbox">
+          <input id="terms" type="checkbox" />
+          <span>He leído y estoy de acuerdo con los <a href="#">términos y condiciones</a> de la web <span class="req">*</span></span>
+        </label>
+
+        <button id="place-order" class="btn-primary btn-wide" type="button">
+          Realizar el pedido
+        </button>
+
+        <p class="muted small">
+          Tus datos personales se utilizarán para procesar tu pedido y mejorar tu experiencia en esta web.
+        </p>
+      </div>
+
+    </aside>
+
+  </section>
+
+</main>
+
+<footer class="site-footer" id="footer">
+
+  <section class="footer-map-wrap" aria-label="Mapa">
+    <div class="container">
+      <h3 class="footer-kicker">Te esperamos</h3>
+
+      <div class="footer-map">
+        <iframe
+          src="https://www.google.com/maps?q=Cañada%20Rosal%20Sevilla&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa de ubicación Productos Álvarez"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-main">
+    <div class="container footer-grid">
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p><strong>Teléfono:</strong> <a href="tel:623044697">623 044 697</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@productosalvarez.es">info@productosalvarez.es</a></p>
+        <p><strong>Ubicación:</strong> Cañada Rosal, Sevilla</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Horario</h4>
+        <p>Lunes a jueves: 09:30–14:00 / 16:00–19:30</p>
+        <p>Viernes: 09:30–14:00</p>
+      </div>
+
+      <div class="footer-col">
+        <ul class="footer-links">
+          <li><a href="tienda.html">Tienda</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="carrito.html">Carrito</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="footer-aids">
+    <div class="container">
+
+      <div class="footer-aids-banners">
+        <img src="../assets/img/footer/footer-logos-ayudas-01.webp" alt="Incentivos y ayudas - Junta de Andalucía y Unión Europea">
+        <img src="../assets/img/footer/footer-logos-ayudas-02.webp" alt="Financiación - Unión Europea, Gobierno de España, red.es, Kit Digital">
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 Productos Álvarez – Todos los derechos reservados</p>
+      </div>
+
+    </div>
+  </section>
+
+</footer>
+
+<script type="module" src="../js/checkout.js"></script>
+</body>
+</html>

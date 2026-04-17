@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galería | Productos Álvarez</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="../../index.html">
+          <img src="../assets/img/logo-productos-alvarez.webp" alt="Productos Álvarez">
+        </a>
+      </div>
+  
+      <ul class="menu">
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="./tienda.html">Tienda</a></li>
+        <li><a href="./galeria.html">Galería</a></li>
+        <li><a href="/index.html#quienes-somos">Quiénes somos</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
+  
+        <li id="user-menu-slot" class="user-menu-slot"></li>
+  
+        <li class="cart-link">
+          <a href="./carrito.html">🛒 <span id="cart-count">0</span></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container gallery-page">
+
+    <header class="gallery-header">
+      <h1>Galería</h1>
+      <p>Conoce nuestro producto, el taller y el proceso de elaboración.</p>
+    </header>
+
+    <section class="gallery-filters" aria-label="Filtros de galería">
+      <button class="filter-btn is-active" type="button" data-filter="all">Todo</button>
+      <button class="filter-btn" type="button" data-filter="producto">Producto</button>
+      <button class="filter-btn" type="button" data-filter="taller">Taller</button>
+      <button class="filter-btn" type="button" data-filter="procedimiento">Procedimiento</button>
+      <button class="filter-btn" type="button" data-filter="proximos">Próximamente</button>
+    </section>
+
+    <section>
+      <div id="gallery-grid" class="gallery-grid"></div>
+      <div id="gallery-empty" class="gallery-empty" hidden>No hay imágenes para este filtro.</div>
+    </section>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop" data-close="1"></div>
+
+      <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Vista ampliada">
+        <button class="lightbox-close" type="button" data-close="1" aria-label="Cerrar">×</button>
+
+        <button class="lightbox-nav prev" type="button" aria-label="Anterior">‹</button>
+        <img id="lightbox-img" alt="">
+        <button class="lightbox-nav next" type="button" aria-label="Siguiente">›</button>
+
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer" id="footer">
+
+    <section class="footer-map-wrap" aria-label="Mapa">
+      <div class="container">
+        <h3 class="footer-kicker">Te esperamos</h3>
+
+        <div class="footer-map">
+          <iframe
+            src="https://www.google.com/maps?q=Cañada%20Rosal%20Sevilla&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de ubicación Productos Álvarez"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-main">
+      <div class="container footer-grid">
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p><strong>Teléfono:</strong> <a href="tel:623044697">623 044 697</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@productosalvarez.es">info@productosalvarez.es</a></p>
+          <p><strong>Ubicación:</strong> Cañada Rosal, Sevilla</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Horario</h4>
+          <p>Lunes a jueves: 09:30–14:00 / 16:00–19:30</p>
+          <p>Viernes: 09:30–14:00</p>
+        </div>
+
+        <div class="footer-col">
+          <ul class="footer-links">
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="footer-aids">
+      <div class="container">
+
+        <div class="footer-aids-banners">
+          <img src="../assets/img/footer/footer-logos-ayudas-01.webp" alt="Incentivos y ayudas - Junta de Andalucía y Unión Europea">
+          <img src="../assets/img/footer/footer-logos-ayudas-02.webp" alt="Financiación - Unión Europea, Gobierno de España, red.es, Kit Digital">
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2024 Productos Álvarez – Todos los derechos reservados</p>
+        </div>
+
+      </div>
+    </section>
+
+  </footer>
+
+  <script type="module" src="../js/galeria.js"></script>
+  <script src="../js/user-menu.js"></script>
+</body>
+</html>

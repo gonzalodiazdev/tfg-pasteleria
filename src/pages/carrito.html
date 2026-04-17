@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito | Productos Álvarez</title>
+
+  <!-- RUTA RECOMENDADA (desde raíz) -->
+  <link rel="stylesheet" href="/src/css/styles.css" />
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="../../index.html">
+          <img src="../assets/img/logo-productos-alvarez.webp" alt="Productos Álvarez">
+        </a>
+      </div>
+  
+      <ul class="menu">
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="./tienda.html">Tienda</a></li>
+        <li><a href="./galeria.html">Galería</a></li>
+        <li><a href="/index.html#quienes-somos">Quiénes somos</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
+  
+        <li id="user-menu-slot" class="user-menu-slot"></li>
+  
+        <li class="cart-link">
+          <a href="./carrito.html">🛒 <span id="cart-count">0</span></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+  <main class="container cart-page">
+    <h1>Tu carrito</h1>
+
+    <!-- CABECERA -->
+    <div class="cart-header" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span>Producto</span>
+      <span>Precio</span>
+      <span>Cantidad</span>
+      <span>Subtotal</span>
+    </div>
+
+    <!-- ITEMS -->
+    <div id="cart-items" class="cart-list"></div>
+
+    <!-- RESUMEN -->
+    <div id="cart-total" class="cart-summary">
+      <h3>Totales del carrito</h3>
+
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span id="summary-subtotal">0,00 € (incl. impuestos)</span>
+      </div>
+
+      <div class="summary-row">
+        <span>IVA (21%)</span>
+        <span id="summary-iva">0,00 €</span>
+      </div>
+
+      <div class="summary-row">
+        <span>Envío</span>
+        <span class="summary-muted">Introduce tu dirección para ver opciones</span>
+      </div>
+
+      <div class="summary-row">
+        <a class="summary-link" href="#" onclick="return false;">Calcular envío</a>
+        <span></span>
+      </div>
+
+      <div class="summary-footer">
+        <div class="summary-total">
+          <span>Total</span>
+          <strong id="summary-total">0,00 €</strong>
+          <small id="summary-total-note" class="summary-muted">incluye 0,00 € IVA</small>
+        </div>
+
+        <a class="btn-checkout" href="#" onclick="return false;">Finalizar compra</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="site-footer" id="footer">
+
+    <!-- MAPA -->
+    <section class="footer-map-wrap" aria-label="Mapa">
+      <div class="container">
+        <h3 class="footer-kicker">Te esperamos</h3>
+
+        <div class="footer-map">
+          <iframe
+          src="https://www.google.com/maps?q=Cañada%20Rosal%20Sevilla&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa de ubicación Productos Álvarez"
+          allowfullscreen>
+        </iframe>
+        
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO / HORARIO -->
+    <section class="footer-main">
+      <div class="container footer-grid">
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p><strong>Teléfono:</strong> <a href="tel:623044697">623 044 697</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@productosalvarez.es">info@productosalvarez.es</a></p>
+          <p><strong>Ubicación:</strong> Cañada Rosal, Sevilla</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Horario</h4>
+          <p>Lunes a jueves: 09:30–14:00 / 16:00–19:30</p>
+          <p>Viernes: 09:30–14:00</p>
+        </div>
+
+        <div class="footer-col">
+        
+          <ul class="footer-links">
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AYUDAS / LOGOS / LEGALES -->
+    <section class="footer-aids">
+      <div class="container">
+
+        <div class="footer-aids-banners">
+          <img
+            src="/src/assets/img/footer/footer-logos-ayudas-01.webp"
+            alt="Incentivos y ayudas - Junta de Andalucía y Unión Europea"
+            loading="lazy"
+          />
+          <img
+            src="/src/assets/img/footer/footer-logos-ayudas-02.webp"
+            alt="Financiación - Unión Europea, Gobierno de España, red.es, Kit Digital"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2024 Productos Álvarez – Todos los derechos reservados</p>
+        </div>
+
+      </div>
+    </section>
+
+  </footer>
+
+  <script src="/src/js/carrito.js"></script>
+  <script src="../js/user-menu.js"></script>
+</body>
+</html>

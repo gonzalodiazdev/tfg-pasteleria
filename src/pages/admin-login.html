@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso administración | Productos Álvarez</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    :root{
+      --admin-primary:#1e3a5f;
+      --admin-primary-2:#284b75;
+      --admin-soft:#eef4fa;
+      --admin-border:#d7e2ee;
+      --admin-danger:#b42318;
+      --admin-success:#067647;
+      --admin-text:#1f2937;
+      --admin-muted:#667085;
+      --admin-white:#ffffff;
+    }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#eef4fa,#dfeaf6);
+      font-family:inherit;
+      color:var(--admin-text);
+      padding:20px;
+    }
+
+    .login-card{
+      width:100%;
+      max-width:420px;
+      background:#fff;
+      border:1px solid var(--admin-border);
+      border-radius:20px;
+      box-shadow:0 18px 40px rgba(16,24,40,.10);
+      overflow:hidden;
+    }
+
+    .login-head{
+      padding:28px 28px 22px;
+      background:linear-gradient(135deg,var(--admin-primary),var(--admin-primary-2));
+      color:#fff;
+    }
+
+    .login-head h1{
+      margin:0 0 8px;
+      font-size:1.8rem;
+      line-height:1.1;
+    }
+
+    .login-head p{
+      margin:0;
+      opacity:.94;
+    }
+
+    .login-body{
+      padding:26px 28px 30px;
+    }
+
+    .login-form{
+      display:grid;
+      gap:16px;
+    }
+
+    .login-field{
+      display:grid;
+      gap:6px;
+    }
+
+    .login-field label{
+      font-weight:700;
+      color:var(--admin-primary);
+      font-size:.94rem;
+    }
+
+    .login-field input{
+      width:100%;
+      border:1px solid #c9d6e3;
+      border-radius:10px;
+      padding:12px 14px;
+      font:inherit;
+      color:var(--admin-text);
+      background:#fff;
+    }
+
+    .login-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:6px;
+    }
+
+    .login-btn{
+      border:none;
+      border-radius:10px;
+      padding:12px 18px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+
+    .login-btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .login-btn-primary{
+      background:var(--admin-primary);
+      color:#fff;
+    }
+
+    .login-btn-primary:hover{
+      background:var(--admin-primary-2);
+    }
+
+    .login-btn-soft{
+      background:#eef4fa;
+      color:var(--admin-primary);
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .login-status{
+      display:none;
+      margin-bottom:14px;
+      padding:12px 14px;
+      border-radius:10px;
+      font-weight:600;
+    }
+
+    .login-status.show{
+      display:block;
+    }
+
+    .login-status.error{
+      background:#fdecea;
+      color:var(--admin-danger);
+      border:1px solid #f5c2c0;
+    }
+
+    .login-note{
+      margin-top:16px;
+      color:var(--admin-muted);
+      font-size:.92rem;
+      line-height:1.45;
+    }
+  </style>
+</head>
+<body>
+  <main class="login-card">
+    <section class="login-head">
+      <h1>Acceso administración</h1>
+      <p>Introduce tus credenciales para acceder al panel interno.</p>
+    </section>
+
+    <section class="login-body">
+      <div id="login-status" class="login-status"></div>
+
+      <form id="admin-login-form" class="login-form">
+        <div class="login-field">
+          <label for="admin-username">Usuario</label>
+          <input type="text" id="admin-username" placeholder="admin" required>
+        </div>
+
+        <div class="login-field">
+          <label for="admin-password">Contraseña</label>
+          <input type="password" id="admin-password" placeholder="••••••••" required>
+        </div>
+
+        <div class="login-actions">
+          <button type="submit" class="login-btn login-btn-primary">Entrar al panel</button>
+          <a href="../../index.html" class="login-btn login-btn-soft">Volver al inicio</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="../js/admin-login.js"></script>
+</body>
+</html>
